@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { ChevronRight, Download, Mail } from 'lucide-react';
 import profileImage from '../../image/image profile .jpeg';
+import cvFile from '../../image/CV wadia_2025.pdf-englais-.pdf';
 
 export function Hero() {
   const [typedText, setTypedText] = useState('');
@@ -98,13 +99,17 @@ export function Hero() {
             <div className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
 
-          <button className="group relative px-8 py-4 bg-transparent border-2 border-purple-500 rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]">
+          <a
+            href={cvFile}
+            download
+            className="group relative px-8 py-4 bg-transparent border-2 border-purple-500 rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]"
+          >
             <span className="relative z-10 flex items-center gap-2 text-purple-400 font-semibold group-hover:text-white transition-colors">
               <Download className="w-5 h-5" />
               Download CV
             </span>
             <div className="absolute inset-0 bg-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </button>
+          </a>
         </motion.div>
 
         <motion.div

@@ -1,30 +1,34 @@
 import { motion } from 'motion/react';
 import { Play, Edit, Users } from 'lucide-react';
+import ctfEldjaziarVideo from '../../image/VIDEO ctf ELDJA.MP4';
+import khaledKhaldiVideo from '../../image/khaled khaldi.MOV';
+import wtrVideo from '../../image/WTR 1.MP4';
+import algeriaRecapVideo from '../../image/VIDEO ALGERIA2.0.MP4';
 
 const mediaProjects = [
   {
-    title: 'CSCC Cybersecurity Event Highlights',
-    type: 'Event Coverage',
-    duration: '5:32',
+    title: 'CTF El Djazair - CTF Competition Recap',
+    type: 'CTF Competition Recap',
     thumbnail: 'video editing cybersecurity event',
+    videoSrc: ctfEldjaziarVideo,
   },
   {
-    title: 'CTF Competition Tutorial Series',
-    type: 'Educational Content',
-    duration: '12:45',
+    title: 'Khaled Khaldi - Promotional Video Edit',
+    type: 'Influencer branding, visual storytelling, and dynamic content production.',
     thumbnail: 'hacker tutorial screen recording',
+    videoSrc: khaledKhaldiVideo,
   },
   {
-    title: 'Digital Forensics Workshop',
-    type: 'Training Material',
-    duration: '8:20',
+    title: 'WTR4Music - Promotional Motion Graphics Video',
+    type: 'Online store advertising, visual branding, and dynamic motion design.',
     thumbnail: 'digital forensics workshop presentation',
+    videoSrc: wtrVideo,
   },
   {
     title: 'Hackathon Algeria 2.0 Recap',
     type: 'Event Documentation',
-    duration: '4:15',
     thumbnail: 'hackathon competition team',
+    videoSrc: algeriaRecapVideo,
   },
 ];
 
@@ -59,16 +63,23 @@ export function MediaWork() {
               className="group cursor-pointer"
             >
               <div className="relative overflow-hidden rounded-2xl mb-4">
-                <div className="aspect-video bg-gradient-to-br from-blue-900/50 to-purple-900/50 flex items-center justify-center border border-white/10 group-hover:border-blue-500/50 transition-all duration-500">
-                  <motion.div
-                    whileHover={{ scale: 1.2 }}
-                    className="w-20 h-20 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center shadow-[0_0_40px_rgba(96,165,250,0.6)]"
-                  >
-                    <Play className="w-10 h-10 text-white ml-1" fill="white" />
-                  </motion.div>
-                </div>
-                <div className="absolute top-4 right-4 px-3 py-1 bg-black/70 backdrop-blur-sm rounded-full text-white text-sm font-mono">
-                  {project.duration}
+                <div className="relative aspect-[9/16] w-full max-w-[260px] mx-auto bg-gradient-to-br from-blue-900/50 to-purple-900/50 flex items-center justify-center border border-white/10 group-hover:border-blue-500/50 transition-all duration-500">
+                  {project.videoSrc ? (
+                    <video
+                      className="absolute inset-0 h-full w-full object-cover"
+                      src={project.videoSrc}
+                      controls
+                      preload="metadata"
+                      playsInline
+                    />
+                  ) : (
+                    <motion.div
+                      whileHover={{ scale: 1.2 }}
+                      className="w-20 h-20 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center shadow-[0_0_40px_rgba(96,165,250,0.6)]"
+                    >
+                      <Play className="w-10 h-10 text-white ml-1" fill="white" />
+                    </motion.div>
+                  )}
                 </div>
               </div>
 
