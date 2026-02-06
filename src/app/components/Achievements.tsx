@@ -1,32 +1,41 @@
 import { motion } from 'motion/react';
 import { AnimatedCounter } from './AnimatedCounter';
 import { Award, Users, Code, Trophy } from 'lucide-react';
+import hackathonLogo from '../../image/algeria 2.0.png';
+import thirdPlaceLogo from '../../image/3rd.png';
+import ctfCompetitionsLogo from '../../image/+15 ctf compitition .jpeg';
+import certificationsLogo from '../../image/certaficate.jpg';
+import studentsMentoredLogo from '../../image/+100 etudiant.png';
 
 export function Achievements() {
   const stats = [
     {
-      icon: Trophy,
+      image: thirdPlaceLogo,
+      alt: '3rd place logo',
       value: 3,
       suffix: 'rd',
       label: 'Hackathon Algeria 2.0',
       color: 'from-yellow-400 to-orange-400',
     },
     {
-      icon: Code,
+      image: ctfCompetitionsLogo,
+      alt: 'CTF competitions logo',
       value: 15,
       suffix: '+',
       label: 'CTF Competitions',
       color: 'from-blue-400 to-cyan-400',
     },
     {
-      icon: Award,
+      image: certificationsLogo,
+      alt: 'Certifications logo',
       value: 15,
       suffix: '+',
       label: 'Certifications',
       color: 'from-purple-400 to-pink-400',
     },
     {
-      icon: Users,
+      image: studentsMentoredLogo,
+      alt: 'Students mentored logo',
       value: 100,
       suffix: '+',
       label: 'Students Mentored',
@@ -64,7 +73,11 @@ export function Achievements() {
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 className="inline-block p-4 bg-gradient-to-br from-white/10 to-white/5 rounded-2xl mb-6"
               >
-                <stat.icon className={`w-8 h-8 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`} style={{ filter: 'drop-shadow(0 0 8px currentColor)' }} />
+                <img
+                  src={stat.image}
+                  alt={stat.alt}
+                  className="w-8 h-8 object-contain"
+                />
               </motion.div>
 
               <AnimatedCounter end={stat.value} suffix={stat.suffix} />
@@ -84,7 +97,11 @@ export function Achievements() {
           <div className="flex items-start gap-6">
             <div className="flex-shrink-0">
               <div className="p-4 bg-yellow-500/20 rounded-2xl">
-                <Trophy className="w-12 h-12 text-yellow-400" />
+                <img
+                  src={hackathonLogo}
+                  alt="Hackathon Algeria 2.0 logo"
+                  className="w-12 h-12 object-contain"
+                />
               </div>
             </div>
             <div>

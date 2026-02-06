@@ -49,6 +49,15 @@ export function Hero() {
           GHRIB Mohammed Wadia
         </motion.h1>
 
+        <motion.p
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="mb-6 text-base md:text-lg text-blue-200"
+        >
+          Master 1 in Computer Systems & Networks at University saad dahleb Blida 1
+        </motion.p>
+
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
