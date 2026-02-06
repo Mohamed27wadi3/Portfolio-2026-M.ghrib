@@ -1,2 +1,9 @@
 # Portfolio-2026-M.ghrib
-mon portfolio version 2026
+
+Mon portfolio version 2026.
+
+## Running the code
+
+Run `npm i` to install the dependencies.
+
+Run `npm run dev` to start the development server.
