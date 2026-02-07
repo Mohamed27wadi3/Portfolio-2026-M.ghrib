@@ -1,34 +1,36 @@
 import { motion } from 'motion/react';
 import { Play, Edit, Users } from 'lucide-react';
-import ctfEldjaziarVideo from '../../image/VIDEO ctf ELDJA.MP4';
-import khaledKhaldiVideo from '../../image/khaled khaldi.MOV';
-import wtrVideo from '../../image/WTR 1.MP4';
-import algeriaRecapVideo from '../../image/VIDEO ALGERIA2.0.MP4';
+
+const baseUrl = import.meta.env.BASE_URL;
 
 const mediaProjects = [
   {
     title: 'CTF El Djazair - CTF Competition Recap',
     type: 'CTF Competition Recap',
     thumbnail: 'video editing cybersecurity event',
-    videoSrc: ctfEldjaziarVideo,
+    videoSrc: `${baseUrl}videos/ctf-eldja.mp4`,
+    videoType: 'video/mp4',
   },
   {
     title: 'Khaled Khaldi - Promotional Video Edit',
     type: 'Influencer branding, visual storytelling, and dynamic content production.',
     thumbnail: 'hacker tutorial screen recording',
-    videoSrc: khaledKhaldiVideo,
+    videoSrc: `${baseUrl}videos/khaled-khaldi.mp4`,
+    videoType: 'video/mp4',
   },
   {
     title: 'WTR4Music - Promotional Motion Graphics Video',
     type: 'Online store advertising, visual branding, and dynamic motion design.',
     thumbnail: 'digital forensics workshop presentation',
-    videoSrc: wtrVideo,
+    videoSrc: `${baseUrl}videos/wtr4music.mp4`,
+    videoType: 'video/mp4',
   },
   {
     title: 'Hackathon Algeria 2.0 Recap',
     type: 'Event Documentation',
     thumbnail: 'hackathon competition team',
-    videoSrc: algeriaRecapVideo,
+    videoSrc: `${baseUrl}videos/algeria-2-0.mp4`,
+    videoType: 'video/mp4',
   },
 ];
 
@@ -67,11 +69,13 @@ export function MediaWork() {
                   {project.videoSrc ? (
                     <video
                       className="absolute inset-0 h-full w-full object-cover"
-                      src={project.videoSrc}
                       controls
                       preload="metadata"
                       playsInline
-                    />
+                    >
+                      <source src={project.videoSrc} type={project.videoType} />
+                      Votre navigateur ne prend pas en charge la video.
+                    </video>
                   ) : (
                     <motion.div
                       whileHover={{ scale: 1.2 }}

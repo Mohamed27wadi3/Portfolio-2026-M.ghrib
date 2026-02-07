@@ -33,14 +33,14 @@ const ctfEvents = [
   {
     type: 'online',
     name: 'Hackini CTF',
-    description: 'International online security competition',
+    description: 'online security competition',
     year: '2024',
     rank: 'Solved 5+ challenges',
   },
   {
     type: 'online',
     name: 'BSides CTF',
-    description: 'Global BSides security conference CTF',
+    description: 'online CTF',
     year: '2025',
     rank: 'Top 15',
   },

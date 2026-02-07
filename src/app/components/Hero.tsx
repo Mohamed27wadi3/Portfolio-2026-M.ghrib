@@ -7,7 +7,7 @@ import cvFile from '../../image/CV wadia_2025.pdf-englais-.pdf';
 export function Hero() {
   const [typedText, setTypedText] = useState('');
   const fullText =
-    'Forensics leader | Network & information Security practitioner | competitive CTF play | video editor';
+    'Forensics leader | Network & information Security practitioner | competitive CTF player | video editor';
 
   useEffect(() => {
     let index = 0;
