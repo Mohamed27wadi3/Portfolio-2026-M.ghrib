@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Github } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 
 const webProjects = [
   {
@@ -22,6 +22,28 @@ const webProjects = [
       'Inventory web app using CRUD operations to manage products and stock levels with a clean, scalable interface.',
     gradient: 'from-purple-600 to-pink-600',
     githubUrl: 'https://github.com/Mohamed27wadi3/CRUDS-JS.git',
+  },
+  {
+    title: 'Detection of False Seismic Alerts Using Deep Learning',
+    description:
+      'Research project on seismic data analysis using deep learning to identify false alerts.',
+    gradient: 'from-amber-600 to-orange-600',
+    githubUrl:
+      'https://github.com/Younes-khiat/false-seismic-alerts-detection.git',
+  },
+  {
+    title: 'BioScanD',
+    description:
+      'BioScan-D is a web and mobile app that helps farmers detect plant diseases using AI-powered image analysis from smartphone photos. It identifies diseases and provides treatment recommendations with accurate dosage guidance.',
+    gradient: 'from-cyan-600 to-sky-600',
+    githubUrl: 'https://github.com/Mohamed27wadi3/algeria-2.0--BioScanD.git',
+  },
+  {
+    title: 'Site E com (Shopify)',
+    description:
+      'Shopify e-commerce site I am developing with a clean storefront and product flow.',
+    gradient: 'from-rose-600 to-fuchsia-600',
+    githubUrl: 'https://4bfakn-rh.myshopify.com/',
   },
 ];
 
@@ -66,15 +88,27 @@ export function WebProjects() {
                 </p>
 
                 <div className="mt-auto">
+                  {project.githubUrl.includes('github.com') ? (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white font-semibold hover:scale-105 transition-transform"
+                    >
+                      <Github className="w-4 h-4" />
+                      GitHub
+                    </a>
+                  ) : (
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white font-semibold hover:scale-105 transition-transform"
                   >
-                    <Github className="w-4 h-4" />
-                    GitHub
+                    <ExternalLink className="w-4 h-4" />
+                    View Site
                   </a>
+                  )}
                 </div>
               </div>
             </motion.div>

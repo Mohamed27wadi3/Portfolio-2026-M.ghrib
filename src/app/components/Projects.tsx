@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { TiltCard } from './TiltCard';
-import { ExternalLink, Github } from 'lucide-react';
+import { Github } from 'lucide-react';
 
 const projects = [
   {
@@ -121,10 +121,6 @@ export function Projects() {
                         Code
                       </button>
                     )}
-                    <button className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white/5 border border-white/20 rounded-lg text-white font-semibold hover:bg-white/10 transition-colors">
-                      <ExternalLink className="w-4 h-4" />
-                      Demo
-                    </button>
                   </div>
                 </div>
               </TiltCard>

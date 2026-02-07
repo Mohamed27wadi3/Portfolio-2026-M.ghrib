@@ -40,7 +40,7 @@ export default function App() {
           <footer className="relative py-12 px-6 border-t border-white/10">
             <div className="max-w-6xl mx-auto text-center">
               <p className="text-gray-400 mb-4">
-                &copy; 2026 Your Name. All rights reserved.
+                &copy; 2026 GHRIB Mohammed wadia. All rights reserved.
               </p>
               <p className="text-gray-500 text-sm">
                 Built with React, Motion, and Tailwind CSS | Cybersecurity

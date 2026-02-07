@@ -1,7 +1,6 @@
 import { motion } from 'motion/react';
 
 const galleryImages = [
-  new URL('../../image/edditing image.JPG', import.meta.url).href,
   new URL('../../image galery/WhatsApp Image 2026-02-07 at 00.10.53.jpeg', import.meta.url).href,
   new URL('../../image galery/WhatsApp Image 2026-02-07 at 00.10.53 (1).jpeg', import.meta.url).href,
   new URL('../../image galery/WhatsApp Image 2026-02-07 at 00.10.53 (2).jpeg', import.meta.url).href,

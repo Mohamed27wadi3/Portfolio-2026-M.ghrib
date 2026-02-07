@@ -47,12 +47,12 @@ export function About() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">
-                    Research Focus
+                    Academic Interests
                   </h3>
                   <p className="text-gray-400">
-                    Currently working on Machine Learning applications for
-                    seismic false alert detection, combining ML expertise with
-                    signal processing
+                    My academic background includes Deep Learning, where I
+                    learned fundamental concepts, neural network architectures,
+                    and their real-world uses.
                   </p>
                 </div>
               </div>
