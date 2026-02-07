@@ -47,7 +47,7 @@ export function LoadingScreen() {
                 transition={{ duration: 2, repeat: Infinity }}
                 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
               >
-                &lt;/CYBER&gt;
+                Mohamed ghr
               </motion.div>
             </div>
 

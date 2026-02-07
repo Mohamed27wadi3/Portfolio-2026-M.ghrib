@@ -3,6 +3,7 @@ import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Projects } from './components/Projects';
+import { WebProjects } from './components/WebProjects';
 import { CTFExperience } from './components/CTFExperience';
 import { Achievements } from './components/Achievements';
 import { Certifications } from './components/Certifications';
@@ -26,6 +27,7 @@ export default function App() {
           <Hero />
           <About />
           <Projects />
+          <WebProjects />
           <CTFExperience />
           <Achievements />
           <Certifications />

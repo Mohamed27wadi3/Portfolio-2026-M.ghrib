@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import {
+  Facebook,
+  Instagram,
   Mail,
   Phone,
   MapPin,
@@ -14,6 +16,11 @@ import {
 export function Contact() {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
 
   const copyToClipboard = async (text: string, type: 'email' | 'phone') => {
     try {
@@ -28,6 +35,23 @@ export function Contact() {
     } catch (err) {
       console.error('Failed to copy:', err);
     }
+  };
+
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const subject = `Contact from ${formData.name || 'website visitor'}`;
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`;
+    const mailto = `mailto:ghrib27wadi@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
   };
 
   return (
@@ -73,11 +97,14 @@ export function Contact() {
                     <p className="text-gray-400 text-sm mb-1">Email</p>
                     <div className="flex items-center gap-2">
                       <p className="text-white font-mono">
-                        your.email@example.com
+                        ghrib_mohammed@etu.univ-blida.dz
                       </p>
                       <button
                         onClick={() =>
-                          copyToClipboard('your.email@example.com', 'email')
+                          copyToClipboard(
+                            'ghrib_mohammed@etu.univ-blida.dz',
+                            'email'
+                          )
                         }
                         className="p-2 hover:bg-white/10 rounded-lg transition-colors"
                       >
@@ -98,10 +125,10 @@ export function Contact() {
                   <div className="flex-1">
                     <p className="text-gray-400 text-sm mb-1">Phone</p>
                     <div className="flex items-center gap-2">
-                      <p className="text-white font-mono">+213 XXX XXX XXX</p>
+                      <p className="text-white font-mono">+213 659214723</p>
                       <button
                         onClick={() =>
-                          copyToClipboard('+213XXXXXXXXX', 'phone')
+                          copyToClipboard('+213659214723', 'phone')
                         }
                         className="p-2 hover:bg-white/10 rounded-lg transition-colors"
                       >
@@ -128,10 +155,10 @@ export function Contact() {
 
               <div className="mt-8 pt-8 border-t border-white/10">
                 <p className="text-gray-400 text-sm mb-4">Connect with me</p>
-                <div className="flex gap-4">
+                <div className="flex flex-wrap gap-4">
                   <motion.a
                     whileHover={{ scale: 1.1, y: -5 }}
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/ghrib-mohammed/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 bg-blue-600/20 rounded-lg hover:bg-blue-600/30 transition-colors group"
@@ -140,12 +167,75 @@ export function Contact() {
                   </motion.a>
                   <motion.a
                     whileHover={{ scale: 1.1, y: -5 }}
-                    href="https://github.com"
+                    href="https://github.com/Mohamed27wadi3"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 bg-purple-600/20 rounded-lg hover:bg-purple-600/30 transition-colors group"
                   >
                     <Github className="w-6 h-6 text-purple-400 group-hover:text-purple-300" />
+                  </motion.a>
+                  <motion.a
+                    whileHover={{ scale: 1.1, y: -5 }}
+                    href="https://www.instagram.com/mohamed_ghr_/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-pink-600/20 rounded-lg hover:bg-pink-600/30 transition-colors group"
+                  >
+                    <Instagram className="w-6 h-6 text-pink-400 group-hover:text-pink-300" />
+                  </motion.a>
+                  <motion.a
+                    whileHover={{ scale: 1.1, y: -5 }}
+                    href="https://web.facebook.com/GHRIB.mohammed.wadia"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-blue-600/20 rounded-lg hover:bg-blue-600/30 transition-colors group"
+                  >
+                    <Facebook className="w-6 h-6 text-blue-300 group-hover:text-blue-200" />
+                  </motion.a>
+                  <motion.a
+                    whileHover={{ scale: 1.1, y: -5 }}
+                    href="https://discord.com/users/mohamed_wadi3"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-indigo-600/20 rounded-lg hover:bg-indigo-600/30 transition-colors group"
+                    title="Discord"
+                  >
+                    <img
+                      src="https://cdn.simpleicons.org/discord/7289DA"
+                      alt="Discord"
+                      className="w-6 h-6"
+                      loading="lazy"
+                    />
+                  </motion.a>
+                  <motion.a
+                    whileHover={{ scale: 1.1, y: -5 }}
+                    href="https://wa.me/213659214723"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-green-600/20 rounded-lg hover:bg-green-600/30 transition-colors group"
+                    title="WhatsApp"
+                  >
+                    <img
+                      src="https://cdn.simpleicons.org/whatsapp/25D366"
+                      alt="WhatsApp"
+                      className="w-6 h-6"
+                      loading="lazy"
+                    />
+                  </motion.a>
+                  <motion.a
+                    whileHover={{ scale: 1.1, y: -5 }}
+                    href="https://t.me/Mohamed_ghr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-sky-600/20 rounded-lg hover:bg-sky-600/30 transition-colors group"
+                    title="Telegram"
+                  >
+                    <img
+                      src="https://cdn.simpleicons.org/telegram/26A5E4"
+                      alt="Telegram"
+                      className="w-6 h-6"
+                      loading="lazy"
+                    />
                   </motion.a>
                 </div>
               </div>
@@ -164,13 +254,16 @@ export function Contact() {
                 Send a Message
               </h3>
 
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-gray-400 text-sm mb-2">
                     Name
                   </label>
                   <input
                     type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:border-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all"
                     placeholder="Your name"
                   />
@@ -182,6 +275,9 @@ export function Contact() {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:border-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all"
                     placeholder="your.email@example.com"
                   />
@@ -193,6 +289,9 @@ export function Contact() {
                   </label>
                   <textarea
                     rows={5}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:border-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all resize-none"
                     placeholder="Your message..."
                   ></textarea>

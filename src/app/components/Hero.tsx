@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { ChevronRight, Download, Mail } from 'lucide-react';
-import profileImage from '../../image/image profile .jpeg';
+import profileImage from '../../image/profile.jpeg';
 import cvFile from '../../image/CV wadia_2025.pdf-englais-.pdf';
 
 export function Hero() {
